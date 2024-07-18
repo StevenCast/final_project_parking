@@ -17,7 +17,7 @@ const guardiasSchema = new mongoose.Schema({
         require: true,
         trim: true
     },
-    correo: {
+    email: {
         type: String,
         require: true,
         trim: true

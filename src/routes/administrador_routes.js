@@ -190,7 +190,7 @@ const router = Router();
  *               cedula: "1548951520"
  *               correo: "tobema9541@bsidesmn.com"
  *               password: "Juanito.123"
- *               telefono: 0998374102
+ *               telefono: "0998374102"
  *               estado: true
  *      EstadoGuardia:
  *          type: object
