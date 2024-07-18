@@ -8,7 +8,7 @@ export  const options = {
         },
         servers: [
             {
-                url: "http://localhost:3000/api", // URL del servidor
+                url: "https://final-project-parking.onrender.com/", // URL del servidor
             },
         ],
     },
