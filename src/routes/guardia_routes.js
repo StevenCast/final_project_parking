@@ -38,7 +38,7 @@ const router = Router();
  *                              format: password
  *                              description: La contraseña debe ser segura
  *                      example:
- *                           correo: tobema9541@bsidesmn.com
+ *                           email: tobema9541@bsidesmn.com
  *                           password: Juanito.123
  *      responses:
  *          200:
