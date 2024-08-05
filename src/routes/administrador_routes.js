@@ -160,7 +160,7 @@ const router = Router();
  *               cedula:
  *                 type: string
  *                 description: Número de cédula del guardia
- *               correo:
+ *               email:
  *                 type: string
  *                 description: El correo electrónico del guardia
  *               password:
@@ -188,7 +188,7 @@ const router = Router();
  *               nombre: "Juanito"
  *               apellido: "Perez"
  *               cedula: "1548951520"
- *               correo: "tobema9541@bsidesmn.com"
+ *               email: "tobema9541@bsidesmn.com"
  *               password: "Juanito.123"
  *               telefono: "0998374102"
  *               estado: true
