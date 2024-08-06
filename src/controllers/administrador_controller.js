@@ -98,13 +98,14 @@ const registroGuardias = async(req,res)=>{
     if(Object.values(req.body).includes("")) return res.status(404).json({
         msg: "Lo sentimos debe llenar todos los campos"
     })
-    const guardia = await guardias.findOne(email)
+    const guardia = await guardias.findOne({ email })
     if(guardia) return res.status(404).json({
         msg: "Lo sentimos pero ese guardia ya se encuentra registrado"
     })
         
     const nuevoGuardia = new guardias(req.body)
-
+    console.log(nuevoGuardia);
+    
     nuevoGuardia.password = await nuevoGuardia.encrypPassword(password)
     
 
