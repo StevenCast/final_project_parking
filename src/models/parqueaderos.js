@@ -24,18 +24,14 @@ const parqueaderoSchema = new mongoose.Schema({
     },
     disponibilidad: {
         type: Boolean,
-        require: true
+        require: false
     },
-    
-    
     estado: {
         type: Boolean,
-        require: true,
-        default: true
+        require: false
     }
 }, {
     timestamps: true
 })
-
 
 export default mongoose.model("Parqueaderos", parqueaderoSchema)

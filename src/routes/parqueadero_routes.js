@@ -19,31 +19,33 @@ const router = Router();
  *     Parqueadero:
  *       type: object
  *       required:
- *         - numero
+ *         - nombre
+ *         - descripción
+ *         - planta
  *         - bloque
  *         - tipo
  *       properties:
  *         _id:
  *           type: string
  *           description: ID del parqueadero
- *         numero:
+ *         nombre:
  *           type: integer
- *           description: Número del parqueadero
+ *           description: Nombre en donde esta ubicado el parqueadero
+ *         descripcion:
+ *           type: string
+ *           description: Descripción del parqueadero
+ *         planta:
+ *           type: string
+ *           description: Piso del parqueadero
  *         bloque:
  *           type: string
- *           description: Bloque del parqueadero
+ *           description: Lugar del parqueadero
  *         tipo:
  *           type: string
- *           description: Tipo de parqueadero
+ *           description: Tipo de vehiculo ingresado
  *         disponibilidad:
  *           type: boolean
  *           description: Indica si el parqueadero está disponible
- *         dimensiones:
- *           type: string
- *           description: Dimensiones del parqueadero
- *         reservado:
- *           type: boolean
- *           description: Estado de reserva del parqueadero
  *         estado:
  *           type: boolean
  *           description: Estado del parqueadero
@@ -59,12 +61,12 @@ const router = Router();
  *           type: integer
  *           description: Versión del documento
  *       example:
- *         numero: 101
- *         bloque: 6666
- *         tipo: normal
+ *         nombre: ESFOT
+ *         descripcion: Parqueadero de la esfot
+ *         planta: 1
+ *         bloque: E1
+ *         tipo: Automovil
  *         disponibilidad: true
- *         dimensiones: 5x2
- *         reservado: false
  *         estado: true
  *         createdAt: 2022-01-01T00:00:00.000Z
  *         updatedAt: 2022-01-01T00:00:00.000Z
@@ -101,11 +103,11 @@ const router = Router();
  *           examples:
  *             nuevoParqueadero:
  *               value:
- *                 numero: 101
- *                 bloque: A
- *                 tipo: Automóvil
- *                 disponibilidad: true
- *                 dimensiones: 5x2
+ *                 nombre: ESFOT
+ *                 descripcion: Parqueadero de la esfot
+ *                 planta: 1
+ *                 bloque: E1
+ *                 tipo: Automovil
  *     responses:
  *       200:
  *         description: Parqueadero registrado exitosamente
