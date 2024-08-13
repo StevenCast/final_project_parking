@@ -1,7 +1,7 @@
 import { Router } from "express";
 import {
   actualizarPerfil,
-  enviarParqueaderosAUsuarios,
+  //enviarParqueaderosAUsuarios,
   login,
   perfil,
   verParqueaderosDisponibles,
@@ -298,11 +298,12 @@ router.get(
  *                          example:
  *                              msg: Lo sentimos primero debe proporcionar un token
  */
+/*
 router.post(
   "/guardias/enviar-parqueaderos-disponibles",
   verificarRol,
-  enviarParqueaderosAUsuarios
-);
+  //enviarParqueaderosAUsuarios
+);*/
 
 /**
  * @swagger

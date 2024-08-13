@@ -2,7 +2,7 @@ import { Router } from "express";
 import {
   actualizarParqueadero,
   detalleParqueadero,
-  cambiarEstadoParqueadero,
+  //cambiarEstadoParqueadero,
   listarDisponibilidadParqueaderos,
   listarParqueaderos,
   registrarParqueadero,
@@ -419,6 +419,6 @@ router.put("/parqueaderos/:id", verificarAdmin, actualizarParqueadero);
  *               msg: Lo sentimos primero debe proporcionar un token
  */
 
-router.patch("/parqueaderos/:id", verificarAdmin, cambiarEstadoParqueadero);
+//router.patch("/parqueaderos/:id", verificarAdmin, cambiarEstadoParqueadero);
 
 export default router;

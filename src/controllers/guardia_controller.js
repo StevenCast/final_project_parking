@@ -47,6 +47,7 @@ const verParqueaderosDisponibles = async(req, res) =>{
         msg: "Lo sentimos, por el momento no hay parqueaderos disponibles"})
     res.status(200).json(parqueaderos)
 }
+/*
 
 const enviarParqueaderosAUsuarios = async(req, res) =>{
 
@@ -68,7 +69,7 @@ const enviarParqueaderosAUsuarios = async(req, res) =>{
     await enviarParqueaderosUsuarios(usuario.email, parqueaderos)
 
     res.status(200).json({msg: "Parqueaderos disponibles enviados al usuario"})
-}
+}*/
 
 const actualizarPerfil = async(req, res) =>{
     const {id} = req.params
@@ -91,5 +92,5 @@ const actualizarPerfil = async(req, res) =>{
 export{login, 
     perfil, 
     verParqueaderosDisponibles, 
-    enviarParqueaderosAUsuarios, 
+    //enviarParqueaderosAUsuarios, 
     actualizarPerfil}

@@ -1,8 +1,17 @@
 import mongoose from "mongoose"
 
 const parqueaderoSchema = new mongoose.Schema({
-    numero: {
-        type: Number,
+    nombre: {
+        type: String,
+        require: true,
+        default: false
+    },
+    description: {
+        type: String,
+        require: true
+    },
+    planta: {
+        type: String,
         require: true
     },
     bloque: {
@@ -17,15 +26,8 @@ const parqueaderoSchema = new mongoose.Schema({
         type: Boolean,
         require: true
     },
-    dimensiones: {
-        type: String,
-        require: true
-    },
-    reservado: {
-        type: Boolean,
-        require: false,
-        default: false
-    },
+    
+    
     estado: {
         type: Boolean,
         require: true,

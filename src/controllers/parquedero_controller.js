@@ -2,10 +2,10 @@ import Parqueaderos from "../models/parqueaderos.js"
 import mongoose from "mongoose"
 
 const registrarParqueadero = async(req,res)=>{
-    const {numero, bloque} = req.body
+    const {description, bloque} = req.body
     if(Object.values(req.body).includes("")) return res.status(400).json({
         msg: "Lo sentimos, debe llenar todos los campos"})
-    const numBloqueEstacionamiento = await Parqueaderos.findOne({numero, bloque})
+    const numBloqueEstacionamiento = await Parqueaderos.findOne({description, bloque})
     if(numBloqueEstacionamiento) return res.status(400).json({
         msg: "Lo sentimos, este parqueadero ya esta registrado"})
         
@@ -45,7 +45,7 @@ const actualizarParqueadero = async(req,res)=>{
     res.status(200).json({msg: "Parqueadero actualizado con exito"})
 }
 
-const cambiarEstadoParqueadero = async(req,res)=>{
+/*const cambiarEstadoParqueadero = async(req,res)=>{
     const {id} = req.params
     const {estado} = req.body
     if(!mongoose.Types.ObjectId.isValid(id)) return res.status(400).json({
@@ -56,7 +56,7 @@ const cambiarEstadoParqueadero = async(req,res)=>{
     const parqueadero = await Parqueaderos.findByIdAndUpdate(id, {status: estado})
     await parqueadero.save()
     res.status(200).json({msg: "El estado del parqueadero ha sido actualizado con exito"})
-}
+}*/
 
 
 export {
@@ -64,6 +64,6 @@ export {
     listarParqueaderos, 
     detalleParqueadero, 
     listarDisponibilidadParqueaderos, 
-    actualizarParqueadero, 
-    cambiarEstadoParqueadero
+    actualizarParqueadero
+    //cambiarEstadoParqueadero
 }
