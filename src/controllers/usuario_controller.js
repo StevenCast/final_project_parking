@@ -154,6 +154,7 @@ const actualizarPerfil = async(req, res)=>{
     await usuario.save()
     res.status(200).json({msg: "Perfil actualizado"})
 }
+
 const verParqueaderosDisponibles = async(req, res) =>{
     const parqueaderos = await Parqueaderos.find({estado: true})
     if(!parqueaderos) return res.status(203).json({

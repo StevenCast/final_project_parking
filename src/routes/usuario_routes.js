@@ -9,6 +9,7 @@ import {
   perfilUsuario,
   recuperarContraseña,
   registrarUsuario,
+  verParqueaderosDisponibles
 } from "../controllers/usuario_controller.js";
 import verificarRol from "../middlewares/autenticacion.js";
 
@@ -595,5 +596,88 @@ router.put("/usuarios/actualizar-password", verificarRol, actualizarContraseña)
  *                   msg: Lo sentimos primero debe proporcionar un token
  */
 router.put("/usuarios/:id", verificarRol, actualizarPerfil);
+
+/**
+ * @swagger
+ * /api/usuarios/parqueaderos-disponibles:
+ *  get:
+ *      summary: Ver parqueaderos disponibles
+ *      tags: [Usuarios]
+ *      security:
+ *          - bearerAuth: []
+ *      responses:
+ *          202:
+ *              description: Lista de parqueaderos disponibles
+ *              content:
+ *                  application/json:
+ *                      schema:
+ *                          type: array
+ *                          items:
+ *                              type: object
+ *                              properties:
+ *                                  _id:
+ *                                      type: string
+ *                                      description: ID del parqueadero
+ *                                  numero:
+ *                                      type: integer
+ *                                      description: Número del parqueadero
+ *                                  bloque:
+ *                                      type: string
+ *                                      description: Bloque del parqueadero
+ *                                  tipo:
+ *                                      type: string
+ *                                      description: Tipo de parqueadero
+ *                                  disponibilidad:
+ *                                      type: boolean
+ *                                      description: Disponibilidad del parqueadero
+ *                                  dimensiones:
+ *                                      type: string
+ *                                      description: Dimensiones del parqueadero
+ *                                  reservado:
+ *                                      type: boolean
+ *                                      description: Estado de reserva del parqueadero
+ *                                  estado:
+ *                                      type: boolean
+ *                                      description: Estado del parqueadero
+ *                                  createdAt:
+ *                                      type: string
+ *                                      format: date-time
+ *                                      description: Fecha de creación
+ *                                  updatedAt:
+ *                                      type: string
+ *                                      format: date-time
+ *                                      description: Fecha de actualización
+ *                                  __v:
+ *                                      type: integer
+ *                                      description: Versión del documento
+ *                          example:
+ *                              _id: 60f3a9b9a0b9b0b9b0b9b0b9
+ *                              numero: 1
+ *                              bloque: A
+ *                              tipo: Parqueadero
+ *                              disponibilidad: true
+ *                              dimensiones: 20x20
+ *                              reservado: false
+ *                              estado: true
+ *                              createdAt: 2022-01-01T00:00:00.000Z
+ *                              updatedAt: 2022-01-01T00:00:00.000Z
+ *                              __v: 0
+ *          403:
+ *              description: No autorizado
+ *              content:
+ *                  application/json:
+ *                      schema:
+ *                          type: object
+ *                          properties:
+ *                              msg:
+ *                                  type: string
+ *                                  description: Mensaje de error
+ *                          example:
+ *                              msg: Lo sentimos primero debe proporcionar un token
+ */
+router.get(
+  "/usuarios/parqueaderos-disponibles",
+  verParqueaderosDisponibles
+);
 
 export default router;
