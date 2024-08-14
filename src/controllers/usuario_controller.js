@@ -2,6 +2,7 @@ import { enviarCorreoUsuario, enviarRestablecimientoContraseña } from "../confi
 import Usuarios from "../models/usuarios.js"
 import mongoose from "mongoose"
 import generarJWT from "../helpers/crearJWT.js"
+import Parqueaderos from "../models/parqueaderos.js"
 
 const loginUsuario = async(req, res)=>{
     const {email, password} = req.body
