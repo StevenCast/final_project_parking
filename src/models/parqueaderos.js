@@ -24,11 +24,13 @@ const parqueaderoSchema = new mongoose.Schema({
     },
     disponibilidad: {
         type: Boolean,
-        require: false
+        require: false,
+        default: true
     },
     estado: {
         type: Boolean,
-        require: false
+        require: false,
+        default: true
     }
 }, {
     timestamps: true
