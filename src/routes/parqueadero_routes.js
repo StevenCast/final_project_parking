@@ -31,7 +31,7 @@ const router = Router();
  *         nombre:
  *           type: integer
  *           description: Nombre en donde esta ubicado el parqueadero
- *         descripcion:
+ *         description:
  *           type: string
  *           description: Descripción del parqueadero
  *         planta:
@@ -62,7 +62,7 @@ const router = Router();
  *           description: Versión del documento
  *       example:
  *         nombre: ESFOT
- *         descripcion: Parqueadero de la esfot
+ *         description: Parqueadero de la esfot
  *         planta: 1
  *         bloque: E1
  *         tipo: Automovil
@@ -104,7 +104,7 @@ const router = Router();
  *             nuevoParqueadero:
  *               value:
  *                 nombre: ESFOT
- *                 descripcion: Parqueadero de la esfot
+ *                 description: Parqueadero de la esfot
  *                 planta: 1
  *                 bloque: E1
  *                 tipo: Automovil
