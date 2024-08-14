@@ -248,56 +248,6 @@ router.get(
   verParqueaderosDisponibles
 );
 
-/**
- * @swagger
- * /api/guardias/enviar-parqueaderos-disponibles:
- *     post:
- *        summary: Enviar parqueaderos disponibles al usuario
- *        security:
- *          - bearerAuth: []
- *        tags: [Guardia]
- *        requestBody:
- *          required: true
- *          content:
- *            application/json:
- *              schema:
- *                type: object
- *                properties:
- *                  email:
- *                    type: string
- *                    description: Email del usuario
- *                  placa_vehiculo:
- *                    type: string
- *                    description: Placa del vehículo
- *                example:
- *                  email: "cenai63408@sablecc.com"
- *                  placa_vehiculo: "abc-6"
- *        responses:
- *          200:
- *            description: Parqueaderos disponibles enviados
- *            content:
- *              application/json:
- *                schema:
- *                  type: object
- *                  properties:
- *                    msg:
- *                      type: string
- *                      description: Mensaje de éxito
- *                  example:
- *                    msg: "Parqueaderos disponibles enviados al usuario"
- *          403:
- *              description: No autorizado
- *              content:
- *                  application/json:
- *                      schema:
- *                          type: object
- *                          properties:
- *                              msg:
- *                                  type: string
- *                                  description: Mensaje de error
- *                          example:
- *                              msg: Lo sentimos primero debe proporcionar un token
- */
 /*
 router.post(
   "/guardias/enviar-parqueaderos-disponibles",
