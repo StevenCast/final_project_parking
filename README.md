@@ -6,7 +6,7 @@
 - [David Vela](https://github.com/Davidvela-306)
 - [Steven Castillo](https://github.com/StevenCast)
 - [Scarlett Luna](https://github.com/Scarlett2010)
-- [Lenín Gomez](https://github.com/lenintoto)
+- [Lenin Gomez](https://github.com/lenintoto)
 - [Shamyr Quishpe](https://github.com/ShamyrQuishpe/)
 - [Alex Cárdenas](https://github.com/AleXCS003)
 
