@@ -44,29 +44,19 @@ app.use("/", swaggerUi.serve, swaggerUi.setup(spect));
 app.use((req, res) => res.status(404).send("Endpoint no encontrado - 404"));
 
 // PARTE IOT
-let port;
+const port = new SerialPort({
+  path: "COM6",
+  baudRate: 9600,
+});
 
-try {
-  port = new SerialPort({
-    path: "COM6",
-    baudRate: 9600,
-  });
+const parser = port.pipe(new ReadlineParser({ delimiter: '\r\n' }));
 
-  const parser = port.pipe(new ReadlineParser({ delimiter: '\r\n' }));
+parser.on('data', function (data) {
+  console.log(data);
+  io.emit('serialData', data); // Emitir datos a todos los clientes conectados
+});
 
-  parser.on('data', (data) => {
-    console.log(data);
-    io.emit('serialData', data); // Emitir datos a todos los clientes conectados
-  });
-
-  parser.on('error', (err) => {
-    console.error(`Error en el parser: ${err.message}`);
-  });
-
-} catch (err) {
-  console.error(`Error al abrir el puerto COM6: ${err.message}`);
-  // Puedes implementar una lógica adicional para manejar este error, como intentar reconectar
-}
+parser.on('error', (err) => console.log(err));
 
 // Socket.IO
 io.on('connection', (socket) => {
